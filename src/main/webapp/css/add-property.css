@@ -1,128 +1,133 @@
-/* add-property.css */
-
+/* Add Property Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
     background: url('../images/addproperty.jpg') no-repeat center center fixed;
     background-size: cover;
-    margin: 0;
-    padding: 0;
+    color: #fff;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
 .container {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.92); /* semi-transparent for readability */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color: #000;
 }
 
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4CAF50;
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px 10px 0 0;
-}
-
-.top-bar .logout-btn {
-    padding: 8px 15px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.top-bar .logout-btn:hover {
-    background-color: #ff1a1a;
-}
-
-h2 {
-    font-size: 28px;
-    color: #333;
+.container h2 {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.form-box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-box label {
-    font-size: 16px;
+    font-size: 28px;
     color: #333;
-    margin-bottom: 5px;
-    display: block;
 }
 
-.form-box input,
-.form-box select,
-.form-box textarea {
+/* Input Fields */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea,
+form select {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
     box-sizing: border-box;
 }
-
-.form-box input[type="file"] {
-    padding: 8px;
-}
-
-.form-box input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+.logout-btn {
     padding: 10px 20px;
-    font-size: 16px;
+    background-color: #ff0303;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.form-box input[type="submit"]:hover {
-    background-color: #45a049;
-}
 
-.form-box .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: -15px;
-    margin-bottom: 15px;
-}
-
-.form-box input:focus,
-.form-box select:focus,
-.form-box textarea:focus {
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
     border-color: #4CAF50;
     outline: none;
 }
 
-.form-box .form-title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+/* Submit Button */
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
-.existing-image {
+form input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Back to Dashboard Button */
+.back-to-dashboard-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 20px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
-.existing-image img {
-    max-width: 100px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+.back-to-dashboard-btn:hover {
+    background-color: #125aa0;
+    transform: scale(1.05);
+}
+
+/* Button Group: Align buttons side by side */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form input, form textarea, form select {
+        font-size: 0.95rem;
+    }
+
+    .container h2 {
+        font-size: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -8,7 +8,7 @@ public class PropertyTree {
 
     private Node root;
 
-    // Node class to represent each node in the BST
+    //  represent each node in the BST
     private static class Node {
         Property property;
         Node left, right;
@@ -24,7 +24,7 @@ public class PropertyTree {
         root = insertRec(root, property);
     }
 
-    // Recursive insert method
+    // insert method
     private Node insertRec(Node root, Property property) {
         if (root == null) {
             root = new Node(property);

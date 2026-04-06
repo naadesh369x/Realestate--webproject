@@ -2,10 +2,8 @@ package com.example.demo.models;
 
 public class Seller extends User {
 
-    public Seller(String email, String password) {
-        super(email, password, "seller"); // Assign the role "seller"
+    // Constructor to initialize Seller with first name, last name, email, password, and role "seller"
+    public Seller(String firstName, String lastName, String email, String password) {
+        super(firstName, lastName, email, password, "seller");
     }
-
-    // Additional functionality specific to Seller can be added here
-    // Example: methods to manage properties
 }

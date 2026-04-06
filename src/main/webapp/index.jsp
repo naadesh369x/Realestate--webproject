@@ -6,8 +6,8 @@
 <body>
 
 <%
-  // Immediately redirect to user dashboard
-  response.sendRedirect("login.jsp");
+  // Immediately redirect to main immersive landing page
+  response.sendRedirect(request.getContextPath() + "/pages/common/mainpage.jsp");
 %>
 
 </body>

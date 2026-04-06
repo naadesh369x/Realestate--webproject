@@ -1,18 +1,38 @@
 package com.example.demo.models;
 
 public class User {
+    protected String firstName;
+    protected String lastName;
     protected String email;
     protected String password;
-    protected String role;  // Added role
+    protected String role;
 
-    // Constructor to initialize email, password, and role
-    public User(String email, String password, String role) {
+    // Constructor
+    public User(String firstName, String lastName, String email, String password, String role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
-    // Getter and Setter for email
+    // Getters and Setters
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -21,7 +41,6 @@ public class User {
         this.email = email;
     }
 
-    // Getter and Setter for password
     public String getPassword() {
         return password;
     }
@@ -30,7 +49,6 @@ public class User {
         this.password = password;
     }
 
-    // Getter and Setter for role
     public String getRole() {
         return role;
     }

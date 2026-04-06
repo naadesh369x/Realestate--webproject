@@ -1,103 +1,128 @@
+/* Apply background image to the entire body */
 body {
+    background-image: url('../images/body.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #8ec5fc, #e0c3fc); /* soft gradient */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    color: #fff;
     margin: 0;
+    padding: 0;
 }
 
+/* General form container styling */
 .form-container {
-    background: rgb(255, 255, 255, 0.2);
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 350px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparent background */
 }
 
 h1 {
     text-align: center;
-    color: darkblue;
     margin-bottom: 20px;
+    color: #333;
 }
 
-form {
+/* Styling for the error message */
+.error {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Tab container for switching roles */
+.tab-container {
     display: flex;
-    flex-direction: column;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
-label {
-    margin-bottom: 6px;
+.tab-button {
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: #333;
+    transition: all 0.3s ease; /* Smooth transition for active tab */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Slight zoom effect on active tab */
+}
+
+/* Input fields */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #333;
 }
 
 input[type="email"],
 input[type="password"],
-select {
+input[type="submit"] {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-top: 8px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 input[type="submit"] {
-    background-color: #28a745;;
+    background-color: #4CAF50;
     color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: transparent;
-    border: 2px solid #218838;
-    color: #218838; /* needs to stay here because of the color property of a tag */
-    text-decoration: none;
+    background-color: #45a049;
 }
 
-a {
-    display: block;
+/* Remember Me checkbox */
+.remember-me {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.register-form {
     text-align: center;
-    margin-top: 15px;
-    color: #fff;
-    text-decoration: none;
+    margin-top: 20px;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-/* Register button style override */
 .register-btn {
-    background-color: #007bff; /* Blue color */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .register-btn:hover {
-    background-color: #218838; /* Darker blue on hover */
+    background-color: #45a049;
 }
-
-
-.error-box {
-    background: rgba(255, 0, 0, 0.1);
-    color: #b30000;
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    padding: 12px 20px;
-    margin: 20px auto;
-    width: fit-content;
-    border-radius: 10px;
-    font-weight: bold;
-    text-align: center;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-}
-
-

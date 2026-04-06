@@ -1,69 +1,139 @@
+/* Apply background image to the entire body */
 body {
+    background-image: url('../images/register.jpg'); /* Replace with actual path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.form-container {
-    width: 400px;
-    margin: 80px auto;
+/* Main container for the registration box */
+.container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #fff; /* Solid white background for form */
     padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* Header styling */
 h1 {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #333;
 }
 
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #555;
+/* Tab container for switching roles */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-input[type="email"],
-input[type="password"],
+.tab-button {
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* Form labels */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+/* Input fields */
 input[type="text"],
-select {
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-input[type="submit"],
-.register-btn {
+/* Submit button */
+input[type="submit"] {
     width: 100%;
     padding: 12px;
-    margin-top: 20px;
-    background-color: #3498db;
-    border: none;
+    background-color: #4CAF50;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
     font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Remember Me checkbox */
+.remember-me {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Login form link */
+.login-form {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-input[type="submit"]:hover,
-.register-btn:hover {
-    background-color: #2980b9;
-}
-
-.register-form {
-    margin-top: 10px;
-}
-
-.error {
-    margin-top: 15px;
-    color: red;
-    text-align: center;
-    font-weight: bold;
+.login-btn:hover {
+    background-color: #1976D2;
 }

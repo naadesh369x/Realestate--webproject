@@ -1,233 +1,321 @@
-/* user-dashboard.css */
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* General Reset and Body Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #f5f5f5;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar Navigation */
 .top-bar {
     background-color: #2c3e50;
     color: white;
-    padding: 15px 30px;
+    padding: 0.8rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-btn {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.top-btn:hover {
+    background-color: #34495e;
+    color: #fff;
 }
 
 .logout-btn {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
 }
 
 .logout-btn:hover {
     background-color: #c0392b;
 }
 
+/* Profile Dropdown */
 .account-dropdown {
     position: relative;
     display: inline-block;
-    margin-left: 15px;
 }
 
-.account-icon {
-    font-size: 24px;
-    cursor: pointer;
+.profile-icon {
+    color: white;
+    transition: color 0.3s;
+}
+
+.profile-icon:hover {
+    color: #3498db;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    z-index: 1;
+    background-color: white;
+    color: #333;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border-radius: 5px;
-    overflow: hidden;
+    padding: 10px 0;
+    z-index: 1001;
 }
 
-.dropdown-content a,
-.dropdown-content form input[type="submit"] {
+.dropdown-content a {
+    color: #333;
     padding: 10px 15px;
     text-decoration: none;
     display: block;
-    color: #333;
-    background-color: white;
-    border: none;
-    width: 100%;
-    text-align: left;
+    font-size: 0.9rem;
 }
 
-.dropdown-content a:hover,
-.dropdown-content form input[type="submit"]:hover {
+.dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
 .show-dropdown {
     display: block;
+    animation: fadeIn 0.2s;
 }
 
+/* Search and Filter Section */
 .search-bar {
+    background-color: white;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .search-bar input,
 .search-bar select {
-    padding: 10px;
-    font-size: 14px;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    min-width: 200px;
+    font-size: 1rem;
+    outline: none;
+    flex: 1 1 200px;
+    transition: border-color 0.3s;
 }
 
-.property-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 20px;
-    padding: 20px;
+.search-bar input:focus,
+.search-bar select:focus {
+    border-color: #3498db;
 }
 
-.property-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
+/* Sorting Section */
+h3 {
+    margin: 1rem 0 1rem;
+    text-align: center;
+    color: #2c3e50;
 }
 
-.property-card:hover {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-}
-
-.property-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.property-info {
-    padding: 15px;
-}
-
-.property-info h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-    color: #3498db;
-}
-
-.property-info p {
-    margin: 5px 0;
-    font-size: 14px;
+.sort-form {
+    text-align: right;
+    max-width: 1200px;
+    margin: -1rem auto 1.5rem;
+    padding: 0 1rem;
+    font-size: 0.9rem;
     color: #555;
 }
 
-.property-info .location {
-    color: #888;
+.sort-form select {
+    padding: 0.3rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 0.5rem;
 }
 
-.property-meta {
+/* Property Grid Container */
+.property-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* Property Card Styling */
+.property-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eaeaea;
 }
 
-.badge {
-    background-color: #2ecc71;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 20px;
-    font-size: 12px;
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.property-meta .price {
-    font-size: 16px;
-    color: #e74c3c;
+.property-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.property-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.property-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.booking-status {
+    font-size: 0.75rem;
     font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: fit-content;
 }
 
-.actions {
+.booking-status.available {
+    background-color: #e8f8f5;
+    color: #27ae60;
+}
+
+.booking-status.booked {
+    background-color: #fdedec;
+    color: #c0392b;
+}
+
+.details p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
     display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
+    align-items: center;
 }
 
-.view-btn,
-.book-btn {
-    padding: 8px 12px;
+.details i {
+    width: 20px;
+    color: #3498db;
+    margin-right: 8px;
+    text-align: center;
+}
+
+/* Action Buttons */
+.actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.actions form {
+    display: inline;
+    flex-grow: 1;
+}
+
+.actions button {
+    width: 100%;
+    padding: 0.6rem 0;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
     cursor: pointer;
-}
-
-.view-btn {
-    background-color: #3498db;
+    font-weight: 600;
+    font-size: 0.9rem;
     color: white;
+    transition: opacity 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-.book-btn {
-    background-color: #2ecc71;
-    color: white;
+.view-btn { background-color: #3498db; }
+.book-btn { background-color: #27ae60; }
+.favorite-btn { background-color: #e74c3c; }
+
+.view-btn:hover, .book-btn:hover, .favorite-btn:hover {
+    opacity: 0.85;
 }
 
-.view-btn:hover {
-    background-color: #2980b9;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.book-btn:hover {
-    background-color: #27ae60;
-}
-.favorite-btn {
-    background-color: #e83e8c;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
 
-.favorite-btn:hover {
-    background-color: #c8236c;
-}
+    .right {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
 
-.view-favorites-btn {
-    padding: 10px 15px;
-    background-color: #ffc107;
-    color: #000;
-    border-radius: 6px;
-    margin-left: 10px;
-    font-weight: bold;
-    text-decoration: none;
-}
-.unfavorite-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    font-size: 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-.unfavorite-btn:hover {
-    background-color: #e60000;
-    transform: scale(1.05);
-}
-
-.unfavorite-btn:active {
-    background-color: #cc0000;
-    transform: scale(0.98);
+    .sort-form {
+        text-align: center;
+    }
 }

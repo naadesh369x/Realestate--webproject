@@ -1,0 +1,86 @@
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/register.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    backdrop-filter: blur(3px);
+}
+
+.update-form {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 500px;
+}
+
+.update-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.update-form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 18px;
+    color: #444;
+}
+
+.update-form input[type="text"],
+.update-form input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.update-form input[type="text"]:focus,
+.update-form input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.update-form input[readonly] {
+    background-color: #f2f2f2;
+    color: #777;
+}
+
+.update-form input[type="submit"] {
+    margin-top: 25px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error-msg {
+    color: #d93025;
+    background-color: #fdecea;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    text-align: center;
+}

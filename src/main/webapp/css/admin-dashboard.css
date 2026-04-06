@@ -1,116 +1,163 @@
-/* General body styling */
+/* General Page Layout */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #2c3e50;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Main container styling */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header styling */
-header {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Navigation styling */
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Dashboard Container */
+.admin-dashboard-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 20px;
 }
 
-table th, table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+/* Admin Panel Section */
+.admin-dashboard-container h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #34495e;
 }
 
-table th {
-    background-color: #333;
+/* Admin Actions Buttons */
+.admin-actions {
+    margin: 20px 0;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-btn:hover {
+    background-color: #1c5980;
+}
+
+/* System Overview */
+.admin-info-section {
+    background-color: #ecf0f1;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.admin-info-section h4 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+.admin-info-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-info-section li {
+    margin-bottom: 8px;
+}
+
+/* Table Styling */
+section h2 {
+    margin-top: 40px;
+    color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
     color: white;
 }
 
-table tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-table tr:hover {
-    background-color: #f1f1f1;
+.delete-btn {
+    background-color: #e74c3c;
+    border: none;
+    padding: 8px 14px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Empty state message */
-td[colspan="2"] {
-    text-align: center;
-    color: #888;
-    font-style: italic;
+.delete-btn:hover {
+    background-color: #c0392b;
 }
 
-/* Styling for header and other sections */
-h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 20px;
-    margin-top: 0;
-}
-
-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    margin-top: 0;
-}
-
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    table th, table td {
-        font-size: 14px;
-        padding: 8px;
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .dashboard-btn {
+        display: block;
+        margin-bottom: 10px;
     }
 
     nav ul li {
         display: block;
-        margin-bottom: 10px;
+        margin: 10px 0;
+    }
+
+    th, td {
+        font-size: 14px;
     }
 }
