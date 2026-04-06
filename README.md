@@ -15,5 +15,5 @@ Apache Tomcat 10.1.x
 
 
 
-![image](https://github.com/user-attachments/assets/a7c6b3e2-32a7-4e9a-9d5a-7528666a9bbc)
+
 <img width="1918" height="907" alt="image" src="https://github.com/user-attachments/assets/55930f8c-cc5b-466c-9504-961068bd017e" />
